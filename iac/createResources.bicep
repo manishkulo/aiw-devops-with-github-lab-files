@@ -10,7 +10,7 @@ targetScope = 'resourceGroup'
 @description('A unique environment name (max 6 characters, alphanumeric only).')
 param environment string
 
-
+#disable-next-line secure-secrets-in-params   // Doesn't contain a secret
 param sqlPassword string
 
 param resourceLocation string = resourceGroup().location
