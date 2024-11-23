@@ -12,7 +12,7 @@ env:
   SUB_DEPLOYMENT_REGION: eastus2
   KV_NAME: contosotraderskv
   PRODUCTS_DB_NAME: productsdb
-  PRODUCTS_DB_SERVER_NAME: contoso-traders-products1
+  PRODUCTS_DB_SERVER_NAME: contoso-traders1-products
   PRODUCTS_DB_USER_NAME: localadmin
   PRODUCT_DETAILS_CONTAINER_NAME: product-details
   PRODUCT_IMAGES_STORAGE_ACCOUNT_NAME: contosotradersimg
