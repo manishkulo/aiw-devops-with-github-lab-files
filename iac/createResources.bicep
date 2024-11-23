@@ -804,13 +804,13 @@ resource cdnprofile_imagesendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-
         }
       ]
     }
-    originHostHeader: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
+    originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${productImagesStgAccName}-blob-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
+          hostName: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
         }
       }
     ]
@@ -887,13 +887,13 @@ resource cdnprofile_uiendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-prev
         }
       ]
     }
-    originHostHeader: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+    originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${uiStgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+          hostName: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
         }
       }
     ]
@@ -998,13 +998,13 @@ resource cdnprofile_ui2endpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-pre
         }
       ]
     }
-    originHostHeader: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+    originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${ui2StgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+          hostName: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
         }
       }
     ]
