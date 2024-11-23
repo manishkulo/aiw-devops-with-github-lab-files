@@ -54,13 +54,13 @@ var cartsDbStocksContainerName = 'carts'
 var productsDbServerName = '${prefixHyphenated2}-products${environment}'
 var productsDbName = 'productsdb'
 var productsDbServerAdminLogin = 'localadmin'
-var productsDbServerAdminPassword = sqlPassword20241123!#!
+var productsDbServerAdminPassword = sqlPassword
 
 // sql azure (profiles db)
 var profilesDbServerName = '${prefixHyphenated2}-profiles${environment}'
 var profilesDbName = 'profilesdb'
 var profilesDbServerAdminLogin = 'localadmin'
-var profilesDbServerAdminPassword = sqlPassword20241123!#!
+var profilesDbServerAdminPassword = sqlPassword
 
 // azure container app (carts api)
 var cartsApiAcaName = '${prefixHyphenated}-carts${environment}'
