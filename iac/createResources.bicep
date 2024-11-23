@@ -171,7 +171,7 @@ resource kv 'Microsoft.KeyVault/vaults@2022-07-01' = {
     tags: resourceTags
     properties: {
       contentType: 'connection string to the products db'
-      value: 'Server=tcp:${productsDbServerName}.database.windows.net,1433;Initial Catalog=${productsDbName};Persist Security Info=False;User ID=${productsDbServerAdminLogin};Password=${productsDbServerAdminPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' // @TODO: hack, fix later
+      value: 'Server=tcp:${productsDbServerName}.environment(),1433;Initial Catalog=${productsDbName};Persist Security Info=False;User ID=${productsDbServerAdminLogin};Password=${productsDbServerAdminPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' // @TODO: hack, fix later
     }
   }
 
@@ -181,7 +181,7 @@ resource kv 'Microsoft.KeyVault/vaults@2022-07-01' = {
     tags: resourceTags
     properties: {
       contentType: 'connection string to the profiles db'
-      value: 'Server=tcp:${profilesDbServerName}.database.windows.net,1433;Initial Catalog=${profilesDbName};Persist Security Info=False;User ID=${profilesDbServerAdminLogin};Password=${profilesDbServerAdminPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' // @TODO: hack, fix later
+      value: 'Server=tcp:${profilesDbServerName}.environment(),1433;Initial Catalog=${profilesDbName};Persist Security Info=False;User ID=${profilesDbServerAdminLogin};Password=${profilesDbServerAdminPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' // @TODO: hack, fix later
     }
   }
 
@@ -804,13 +804,13 @@ resource cdnprofile_imagesendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-
         }
       ]
     }
-    originHostHeader: '${productImagesStgAccName}.blob.core.windows.net' // @TODO: Hack, fix later
+    originHostHeader: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${productImagesStgAccName}-blob-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${productImagesStgAccName}.blob.core.windows.net' // @TODO: Hack, fix later
-          originHostHeader: '${productImagesStgAccName}.blob.core.windows.net' // @TODO: Hack, fix later
+          hostName: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${productImagesStgAccName}.blob.environment()' // @TODO: Hack, fix later
         }
       }
     ]
@@ -887,13 +887,13 @@ resource cdnprofile_uiendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-prev
         }
       ]
     }
-    originHostHeader: '${uiStgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
+    originHostHeader: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${uiStgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${uiStgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
-          originHostHeader: '${uiStgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
+          hostName: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${uiStgAccName}.z13.web.environment()' // @TODO: Hack, fix later
         }
       }
     ]
@@ -998,13 +998,13 @@ resource cdnprofile_ui2endpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-pre
         }
       ]
     }
-    originHostHeader: '${ui2StgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
+    originHostHeader: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${ui2StgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
-          hostName: '${ui2StgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
-          originHostHeader: '${ui2StgAccName}.z13.web.core.windows.net' // @TODO: Hack, fix later
+          hostName: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${ui2StgAccName}.z13.web.environment()' // @TODO: Hack, fix later
         }
       }
     ]
