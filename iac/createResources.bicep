@@ -24,6 +24,7 @@ param aksLinuxAdminUsername string // value supplied via parameters file
 param prefix string = 'contosotraders'
 
 param prefixHyphenated string = 'contoso-traders'
+param prefixHyphenated2 string = 'contoso-traders1'
 
 // variables
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,13 +51,13 @@ var cartsDbName = 'cartsdb'
 var cartsDbStocksContainerName = 'carts'
 
 // sql azure (products db)
-var productsDbServerName = '${prefixHyphenated}-products${environment}'
+var productsDbServerName = '${prefixHyphenated2}-products${environment}'
 var productsDbName = 'productsdb'
 var productsDbServerAdminLogin = 'localadmin'
 var productsDbServerAdminPassword = sqlPassword
 
 // sql azure (profiles db)
-var profilesDbServerName = '${prefixHyphenated}-profiles${environment}'
+var profilesDbServerName = '${prefixHyphenated2}-profiles${environment}'
 var profilesDbName = 'profilesdb'
 var profilesDbServerAdminLogin = 'localadmin'
 var profilesDbServerAdminPassword = sqlPassword
