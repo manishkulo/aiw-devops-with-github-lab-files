@@ -14,7 +14,7 @@ param environment string
 param sqlPassword string
 
 param resourceLocation string = resourceGroup().location
-//param resourceLocation2 string = 'eastus2'
+param resourceLocation2 string = 'eastus2'
 // tenant
 param tenantId string = subscription().tenantId
 
@@ -375,7 +375,7 @@ resource cartsdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
 // sql azure server
 resource productsdbsrv 'Microsoft.Sql/servers@2022-05-01-preview' = {
   name: productsDbServerName
-  location: resourceLocation
+  location: resourceLocation2
   tags: resourceTags
   properties: {
     administratorLogin: productsDbServerAdminLogin
@@ -386,7 +386,7 @@ resource productsdbsrv 'Microsoft.Sql/servers@2022-05-01-preview' = {
   // sql azure database
   resource productsdbsrv_db 'databases' = {
     name: productsDbName
-    location: resourceLocation
+    location: resourceLocation2
     tags: resourceTags
     sku: {
       capacity: 5
@@ -421,7 +421,7 @@ resource productsdbsrv 'Microsoft.Sql/servers@2022-05-01-preview' = {
 // sql azure server
 resource profilesdbsrv 'Microsoft.Sql/servers@2022-05-01-preview' = {
   name: profilesDbServerName
-  location: resourceLocation
+  location: resourceLocation2
   tags: resourceTags
   properties: {
     administratorLogin: profilesDbServerAdminLogin
@@ -432,7 +432,7 @@ resource profilesdbsrv 'Microsoft.Sql/servers@2022-05-01-preview' = {
   // sql azure database
   resource profilesdbsrv_db 'databases' = {
     name: profilesDbName
-    location: resourceLocation
+    location: resourceLocation2
     tags: resourceTags
     sku: {
       capacity: 5
