@@ -804,13 +804,20 @@ resource cdnprofile_imagesendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-
         }
       ]
     }
-    originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
+    /*originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${productImagesStgAccName}-blob-core-windows-net' // @TODO: Hack, fix later
         properties: {
           hostName: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${productImagesStgAccName}.environment()' // @TODO: Hack, fix later */
+    originHostHeader: replace(replace(productimagesstgacc.properties.primaryEndpoints.blob, 'https://', ''), '/', '')
+    origins: [
+      {
+        name: replace(replace(replace(productimagesstgacc.properties.primaryEndpoints.blob, 'https://', ''), '/', ''), '.', '-')
+        properties: {
+          hostName: replace(replace(productimagesstgacc.properties.primaryEndpoints.blob, 'https://', ''), '/', '')
+          originHostHeader: replace(replace(productimagesstgacc.properties.primaryEndpoints.blob, 'https://', ''), '/', '')
         }
       }
     ]
