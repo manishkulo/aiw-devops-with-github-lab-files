@@ -894,13 +894,20 @@ resource cdnprofile_uiendpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-prev
         }
       ]
     }
-    originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
+    /*originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${uiStgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
           hostName: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${uiStgAccName}.z13.environment()' // @TODO: Hack, fix later*/
+    originHostHeader: replace(replace(uistgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
+    origins: [
+      {
+        name: replace(replace(replace(uistgacc.properties.primaryEndpoints.web, 'https://', ''), '/', ''), '.', '-')
+        properties: {
+          hostName: replace(replace(uistgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
+          originHostHeader: replace(replace(uistgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
         }
       }
     ]
@@ -1005,13 +1012,20 @@ resource cdnprofile_ui2endpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-pre
         }
       ]
     }
-    originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
+    /*originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
     origins: [
       {
         name: '${ui2StgAccName}-z13-web-core-windows-net' // @TODO: Hack, fix later
         properties: {
           hostName: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
-          originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later
+          originHostHeader: '${ui2StgAccName}.z13.environment()' // @TODO: Hack, fix later*/
+    originHostHeader: replace(replace(ui2stgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
+    origins: [
+      {
+        name: replace(replace(replace(ui2stgacc.properties.primaryEndpoints.web, 'https://', ''), '/', ''), '.', '-')
+        properties: {
+          hostName: replace(replace(ui2stgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
+          originHostHeader: replace(replace(ui2stgacc.properties.primaryEndpoints.web, 'https://', ''), '/', '')
         }
       }
     ]
