@@ -268,7 +268,7 @@ resource kv 'Microsoft.KeyVault/vaults@2022-07-01' = {
 // cosmos db account
 resource stocksdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
   name: stocksDbAcctName
-  location: resourceLocation
+  location: resourceLocation2
   tags: resourceTags
   properties: {
     databaseAccountOfferType: 'Standard'
@@ -288,7 +288,7 @@ resource stocksdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = 
   // cosmos db database
   resource stocksdba_db 'sqlDatabases' = {
     name: stocksDbName
-    location: resourceLocation
+    location: resourceLocation2
     tags: resourceTags
     properties: {
       resource: {
@@ -299,7 +299,7 @@ resource stocksdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = 
     // cosmos db collection
     resource stocksdba_db_c1 'containers' = {
       name: stocksDbStocksContainerName
-      location: resourceLocation
+      location: resourceLocation2
       tags: resourceTags
       properties: {
         resource: {
@@ -322,7 +322,7 @@ resource stocksdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = 
 // cosmos db account
 resource cartsdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
   name: cartsDbAcctName
-  location: resourceLocation
+  location: resourceLocation2
   tags: resourceTags
   properties: {
     databaseAccountOfferType: 'Standard'
@@ -342,7 +342,7 @@ resource cartsdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
   // cosmos db database
   resource cartsdba_db 'sqlDatabases' = {
     name: cartsDbName
-    location: resourceLocation
+    location: resourceLocation2
     tags: resourceTags
     properties: {
       resource: {
@@ -353,7 +353,7 @@ resource cartsdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
     // cosmos db collection
     resource cartsdba_db_c1 'containers' = {
       name: cartsDbStocksContainerName
-      location: resourceLocation
+      location: resourceLocation2
       tags: resourceTags
       properties: {
         resource: {
