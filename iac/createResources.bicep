@@ -280,7 +280,7 @@ resource stocksdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = 
     ]
     locations: [
       {
-        locationName: resourceLocation
+        locationName: resourceLocation2
       }
     ]
   }
@@ -334,7 +334,7 @@ resource cartsdba 'Microsoft.DocumentDB/databaseAccounts@2022-02-15-preview' = {
     ]
     locations: [
       {
-        locationName: resourceLocation
+        locationName: resourceLocation2
       }
     ]
   }
